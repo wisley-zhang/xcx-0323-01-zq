@@ -1,0 +1,277 @@
+<!--搜索框-->
+<view class="page-top">
+   
+    <!--列表-->
+    <view class="list-top">
+      <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+        <text>{{item}}</text>  
+      </view>
+    </view>
+</view>
+
+<!--精选页面-->
+<view class="containere" hidden="{{currentTab!==0}}">
+
+   <scroll-view scroll-y="true" style="height: 900rpx;" class="scrolls">
+   
+    <view class="ser-list">     
+           <view class="timesses">
+          <view class="times">
+            <view class="timess">
+              下单时间： 2018-04-03 19:20:29
+            </view>
+          </view>
+          <view class="waitemon">
+            待付款
+          </view>
+        </view>
+        
+        <!--订单号-->
+         <view class="orderNmber">
+              <view class="orderNm">
+                  订单号:201804031920456456
+                </view>
+              <image src="../../images/icon/arrow.png"></image>
+         </view>
+
+
+       
+          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;margin-top:1%;" >
+          
+          <navigator url="/pages/orderDetails/orderDetails" hover-class="navigator-hover">
+
+           <view class="list-goods">
+
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                <!-- <view class="title-prie">
+                  <view class="goods-name">
+                     <text>休闲服装</text>
+                  </view>
+                    <view class="price">
+                      <text>¥1900</text>
+                    </view>
+                    </view> -->
+                </view>
+      
+             <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                <!-- <view class="title-prie">
+                  <view class="goods-name">
+                     <text>休闲服装</text>
+                  </view>
+                    <view class="price">
+                      <text>¥1900</text>
+                    </view>
+                    </view> -->
+                </view>
+              
+            <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                <view class="title-prie">
+                  <!-- <view class="goods-name">
+                     <text>休闲服装</text>
+                  </view>
+                    <view class="price">
+                      <text>¥1900</text>
+                    </view> -->
+                    </view>
+                </view>
+
+                <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                <view class="title-prie">
+                  <!-- <view class="goods-name">
+                     <text>休闲服装</text>
+                  </view>
+                    <view class="price">
+                      <text>¥1900</text>
+                    </view> -->
+                    </view>
+                </view>
+               </navigator>
+          </scroll-view>
+      </view>
+
+ 
+
+
+
+
+
+
+
+</scroll-view>
+
+
+
+</view>
+
+<!--待付款-->  
+<view hidden="{{currentTab!==1}}" bindtap="gemstone">  
+  <scroll-view scroll-y="true" style="height: 800rpx;">
+      
+   
+
+    <view class="ser-list">
+          <view class="timesses">
+          <view class="times">
+            <view class="timess">
+              下单时间： 2018-04-03 19:20:29
+            </view>
+          </view>
+          <view class="waitemon">
+            待付款
+          </view>
+        </view>
+        
+        <!--订单号-->
+         <view class="orderNmber">
+              <view class="orderNm">
+                  订单号:201804031920456456
+                </view>
+              <!-- </view> -->
+              <image src="../../images/icon/arrow.png"></image>
+         </view>
+
+
+          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+              
+              <view class="list-goods">
+               <!--  <navigator url="/pages/goodsdetails/goodsdetails?id=11" hover-class="none"> -->
+                  <view class="goods-one">
+                    <image src="../../images/list01.png" class="list-one-img"/>
+                  </view>
+                 
+               <!--  </navigator> -->
+              </view>
+      
+             <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+              
+                </view>
+              
+            <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                
+                </view>
+
+                <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                
+                </view>
+
+                
+          </scroll-view>
+      </view>
+
+      <view class="ser-list">
+          <view class="timesses">
+          <view class="times">
+            <view class="timess">
+              下单时间： 2018-04-03 19:20:29
+            </view>
+          </view>
+          <view class="waitemon">
+            待付款
+          </view>
+        </view>
+        
+        <!--订单号-->
+         <view class="orderNmber">
+              <view class="orderNm">
+                  订单号:201804031920456456
+                </view>
+              <!-- </view> -->
+              <image src="../../images/icon/arrow.png"></image>
+         </view>
+
+
+          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+           <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                
+                </view>
+      
+             <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+               
+                </view>
+              
+            <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+               
+                </view>
+
+                <view class="list-goods">
+              <view class="goods-one">
+                  <image src="../../images/list01.png" class="list-one-img"/>
+                </view>
+                
+                </view>
+                
+          </scroll-view>
+      </view>
+
+</scroll-view>
+
+
+
+
+</view>  
+
+<!--钻石-->  
+<view hidden="{{currentTab!==2}}">  
+    <view class="xilie-title">
+     <block wx:for="{{xilieTitle}}" wx:for-index="indx" wx:for-item="itemName">
+      <navigator url="/pages/searchList/searchList" class="nav" hover-class="none">
+          <view class="art-title">
+            <text>{{itemName['name']}}</text>
+          </view>
+       </navigator>
+      </block>
+   </view>
+</view> 
+<!--翡翠-->  
+<view hidden="{{currentTab!==3}}">  
+    <view class="xilie-title">
+       <block wx:for="{{xilieTitle}}" wx:for-index="indx" wx:for-item="itemName">
+        <navigator url="/pages/goodsdetails/goodsdetails" class="nav" hover-class="none">
+            <view class="art-title">
+              <text>{{itemName['name']}}</text>
+            </view>
+         </navigator>
+        </block>
+   </view>
+</view> 
+<!--desgin-->  
+<view hidden="{{currentTab!==4}}">  
+     <view class="xilie-title">
+       <block wx:for="{{xilieTitle}}" wx:for-index="indx" wx:for-item="itemName">
+        <navigator url="/pages/goodsdetails/goodsdetails" class="nav" hover-class="none">
+            <view class="art-title">
+              <text>{{itemName['name']}}</text>
+            </view>
+         </navigator>
+        </block>
+   </view>
+</view> 

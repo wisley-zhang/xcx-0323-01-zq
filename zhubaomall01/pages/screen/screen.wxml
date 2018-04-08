@@ -1,0 +1,12 @@
+<image src="../../images/goods/article-log.png" class="logo"/>
+<view class="contentsss">
+	<view class="titles">
+		<text>女王的东西（主标题)</text> 
+	</view>
+	<view class="subtitle">
+		<text> 女王的首饰（副标题）</text>
+	</view>
+	<view class="contentss">
+		文章的主要内容放到这里
+	</view>
+</view>

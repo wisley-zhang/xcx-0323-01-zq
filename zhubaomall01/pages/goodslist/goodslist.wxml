@@ -1,0 +1,67 @@
+<view class="list">
+
+<view class="goods">
+  <navigator url="/pages/goodsdetails/goodsdetails?id=1" hover-class="none">
+      <view class="img">
+         <image src="../../images/goods/01.png" class="img-one"/>
+      </view>
+      <view class="title">
+         <text>红色项链</text>
+      </view>
+      <view class="price">
+        <text>
+           ¥ 888.00
+        </text>
+      </view>
+  </navigator>
+</view>
+
+<view class="goods">
+   <navigator url="/pages/goodsdetails/goodsdetails?id=1" hover-class="none">
+    <view class="img">
+       <image src="../../images/goods/01.png" class="img-one"/>
+    </view>
+    <view class="title">
+       <text>红色项链</text>
+    </view>
+    <view class="price">
+      <text>
+         ¥ 888.00
+      </text>
+    </view>
+  </navigator>
+</view>
+
+<view class="goods">
+   <navigator url="/pages/goodsdetails/goodsdetails?id=1" hover-class="none">
+    <view class="img">
+       <image src="../../images/goods/01.png" class="img-one"/>
+    </view>
+    <view class="title">
+       <text>红色项链</text>
+    </view>
+    <view class="price">
+      <text>
+         ¥ 888.00
+      </text>
+    </view>
+  </navigator>
+</view>
+
+<view class="goods">
+   <navigator url="/pages/goodsdetails/goodsdetails?id=1" hover-class="none">
+    <view class="img">
+       <image src="../../images/goods/01.png" class="img-one"/>
+    </view>
+    <view class="title">
+       <text>红色项链</text>
+    </view>
+    <view class="price">
+      <text>
+         ¥ 888.00
+      </text>
+    </view>
+  </navigator>
+</view>
+
+</view>

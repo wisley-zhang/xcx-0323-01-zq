@@ -1,0 +1,76 @@
+<!--商品的滚动图片-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">LANCOME兰蔻小黑瓶精华肌底液</text>
+    <text class="price">￥500</text>
+  </view>
+  <view class="separate"></view>
+
+  <block wx:for-items="{{detailImg}}" wx:key="name">
+    <image class="image_detail" src="{{item}}" />
+  </block>
+  <view class="temp"></view>
+</scroll-view>
+
+<!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="pages">
+         <view class="prices">
+             <view class="price">
+                   单价:
+             </view>
+             <view class="pricees">       
+                  ¥3000
+             </view>
+         </view>
+          <view class="prices">
+             <view class="price">
+                   库存:
+             </view>
+             <view class="pricees">
+                  12件
+             </view>
+         </view>
+    
+         <!--数量-->
+         <view class="prices">
+             <view class="price">
+                    数量:
+             </view>
+             <view class="pricees">
+                 <!-- 减号 -->  
+                <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+                <!-- 数值 -->  
+                <input type="number" bindchange="bindManual" value="{{num}}" class="inputnum" />  
+                <!-- 加号 -->  
+                <text class="normal" bindtap="bindPlus">+</text> 
+             </view>
+         </view>
+
+         <view class="btn" bindtap="btn" id="{{addCars}}">
+             选好了
+         </view>
+    </view>
+  </view>
+
+
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <image bindtap="toCar" src="../../images/icon/shoppingCart.png"/>
+  <view class="line_nav"></view>
+  <image bindtap="addLike" src="{{isLike?'../../images/icon/wechat.png':'../../images/detail/detail_btn_mark_normal.png'}}" />
+  <button class="button-green" bindtap="addCar" formType="submit">加入购物车</button>
+  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+</view>
+
+
+

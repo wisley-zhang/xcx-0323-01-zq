@@ -1,0 +1,24 @@
+<view class="containers">
+	<view class="contact01">
+	    <text>联系电话</text>
+	</view>
+	<view class="contact02">
+	   服务时间：周一至周日，10：00--21：00
+    </view>
+    <view class="contact03" bindtap="tel">
+	
+			1350000011
+    </view>
+</view>
+
+<view class="containers">
+	<view class="contact01">
+	    在线客服
+	</view>
+	<view class="contact02">
+	 服务时间：周一至周日，10：00--21：00
+    </view>
+    <view class="contact03" bindtap="customerService">
+			点击在线客服
+    </view>
+</view>

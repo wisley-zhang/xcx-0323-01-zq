@@ -1,0 +1,35 @@
+.search{
+	width: 100%;
+	height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+} 
+
+.icon{
+	width: 10%;
+	height: 50rpx;
+    display: flex;
+}
+.icon-search{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+}
+.inputss{
+	width: 80%;
+    height: 50rpx;
+    border:1rpx red solid;
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputs{
+	/*background-color: red; */
+}
+.cancel{
+	display: flex;
+}
+
+

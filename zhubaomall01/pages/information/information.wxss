@@ -1,0 +1,41 @@
+.arctic{
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.navigator01 {
+	width: 100%;
+}
+.img-artic{
+	width: 95%;
+	height: 300rpx;
+	display: flex;		
+}
+.time-author{
+	width: 95%;
+	height: 50rpx;
+	display: flex;
+	flex-direction: row;
+	font-size: 30rpx;
+}
+.times{
+	width: 25%;
+	height: 25rpx;
+	display: flex;
+}
+
+.author{
+	width: 25%;
+	height: 25rpx;
+	display: flex;
+	color: red;
+}
+.title{
+	width: 95%;
+	height: 50rpx;
+	display: flex;
+
+}
+

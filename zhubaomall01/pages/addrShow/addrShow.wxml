@@ -1,0 +1,5 @@
+<navigator url="/pages/addr/addr">
+<view class="naniu">
+	<text>添加地址</text>
+</view>
+</navigator>

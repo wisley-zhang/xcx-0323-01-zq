@@ -1,0 +1,57 @@
+<view class="add">
+	<view class="inputes">
+		<view class="per">
+			<text>联系人</text>
+		</view>
+	    <view class="inputs">
+	    	<input placeholder="姓名"/>
+        </view>
+    </view>
+    <view class="inputes">
+		<view class="per">
+			<text>手机号码</text>
+		</view>
+	    <view class="inputs">
+	    	<input placeholder="11位手机号码"/>
+        </view>
+    </view>
+    <view class="inputes">
+		<view class="per">
+			<text>邮编号</text>
+		</view>
+	    <view class="inputs">
+	    	<input placeholder="邮编"/>
+        </view>
+    </view>
+    <view class="inputes">
+		<view class="per">
+			<text>选择地区</text>
+		</view>
+	    <view class="inputs">
+	    	<input placeholder="选择地区"/>
+        </view>
+        <view class="inputs">
+	    	<input placeholder="选择地区"/>
+        </view>
+        <view class="inputs">
+	    	<input placeholder="选择地区"/>
+        </view>
+    </view>
+    <view class="inputes">
+		<view class="per">
+			<text>详细地址</text>
+		</view>
+	    <view class="inputs">
+	    	<input placeholder="选择地区"/>
+        </view>
+    </view>
+    
+    <view class="keep">
+    	<button type="warn" size="default">保存 </button>
+    </view>
+    <view class="keep">
+    	<button size="default">取消 </button>
+    </view>
+
+
+</view>
