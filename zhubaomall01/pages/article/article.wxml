@@ -1,12 +1,14 @@
-<image src="../../images/goods/article-log.png" class="logo"/>
+<scroll-view scroll-y="true" style="height: {{clientHeight?clientHeight+'px':'auto'}};">
+<!-- <image src="https://zq.muyaonet.com/{{articleContent.image}}" bindload="imageLoad" class="logo"/> -->
 <view class="contentsss">
 	<view class="titles">
-		<text>女王的东西（主标题)</text> 
+		<text>{{articleContent.title}}</text> 
 	</view>
 	<view class="subtitle">
-		<text> 女王的首饰（副标题）</text>
+		<text> {{articleContent.short_title}}</text>
 	</view>
-	<view class="contentss">
-		文章的主要内容放到这里
-	</view>
+     <view class="contentss">
+     	 <rich-text nodes="{{contents}}"></rich-text>
+     </view>
 </view>
+</scroll-view>

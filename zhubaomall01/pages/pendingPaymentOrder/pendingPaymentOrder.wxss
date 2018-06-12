@@ -1,205 +1,227 @@
 /*收货地址*/
 .page{
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #F5F4F5;
 }
 .addr{
   width: 100%;
   height: auto;
+  margin-bottom: 10%;
+  font-size: 30rpx;
+  margin-bottom: 5%;
+}
+.addr navigator{
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-bottom: 1rpx red solid;
+}
+.addres{
+  width: 96%;
+  height: auto;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
-
-.addr navigator {
-  display:flex;
-  width:100%;
+.addrs{
+  width: 90%;
+  height:auto;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
 }
 
 .logistics{
   width: 90%;
-  margin-left: 5%;
+  height: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .logisticsPeople{
   width: 25%;
+  height: auto;
   display: flex;
-  flex-direction: row;
+  color: #999999;  
 }
 .inputs{
-  width: 25%;
+  width: 15%;
+  height: auto;
   display: flex;
+  color: #333333;
 }
 .tel{
   width: 50%;
-  display: flex;
-  font-size: 35rpx;
+  height: auto;
+  color: #333333;
 }
 .logisticsAddr{
   width: 90%;
+  height: auto;
+  font-size: 25rpx;
   display: flex;
-  margin-left: 5%;
   flex-direction: row;
-  font-size: 35rpx;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 .logisticsAddrs{
+  width: 27%;
+  height: auto;
   display: flex;
-  width: 29%;
+  color: #999999;
 }
 .logisticsAddrsName{
+  width: 73%;
+  height: auto;
   display: flex;
-  width: 75%;
+  color: #333333;
+}
+.imgAddr{
+  width: 45rpx;
+  height: 45rpx;
+  
 }
 
-/*.addrs{
-  width: 40%;
-  height: 100rpx;
+
+.goodsContent{
+  width: 96%;
+  height: auto;
   display: flex;
-  font-size: 35rpx;
-}*/
-/*商城的名字*/
-.shop-name{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.goodsContent image{
+  width: 30%;
+  height: 200rpx;
+  display: flex;
+}
+.goodsText{
+  width: 60%;
+  height: auto;
+  padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.goodsName{
   width: 100%;
   height: auto;
-  font-size:40rpx;
-  border-top: 12rpx solid red;
+  display: flex;
+  flex-direction: column;
 }
-.shop-names{
-  margin-left: 3%;
+.goodsNames{
+  width: 100%;
+  color: #333333;
+  font-size: 35rpx;
+}
+.goodsFu{
+  width: 100%;
+  margin-top: 2%;
+  color: #999999;
+  font-size: 20rpx;
 }
 
-/*商品列表*/
+
+.prices{
+  width: 100%;
+  height: auto;
+  margin-top: 16%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 35rpx;
+}
+.price{
+  width: 87%;
+  display: flex;
+  color: #C89F5F;
+}
+.goodsCount{
+  width: 13%;
+  display: flex;
+  color: #666666;
+}
+
+/*横线*/
 .separate{
   width: 100%;
-  background-color: red;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #EFEFEF;
   height: 2rpx;
 }
-.cart_container{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+
+
+
+
+/*底部按钮*/
+.bottom{
+width: 100%;
+height:100rpx;
+bottom:0rpx;
+position:fixed;
+background-color: #F5F5F5;
+border-top: 1rpx solid #EFEFEF;
 }
-.item-image{
-  width: 40%;
-  margin-left: 5%;
-  height: 200rpx;
-  display: flex;
-}
-.goodes{
-  width: 60%;
-  margin-left: 5%;
-  height: 200rpx;
-  display: flex;
-  flex-direction: column;
-}
-.title{
+
+.listContentList{
   width: 100%;
   height: 100rpx;
-  display: flex;
-}
-.column{
-  width: 100%;
-  height: 100rpx;
-  margin-top: 100rpx;
+  background-color: #F4F4F4;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-.row{
-  width: 50%;
-  height: auto;
-  display: flex;
-}
-.account{
-  width: 50%;
-  height: auto;
-  display: flex;
-}
-
-/*备注*/
-.remarks{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
-.rmark{
-  color: red;
-  width: 40%;
-  display: flex;
-}
-.remarkes{
-  display: flex;
-  width: 60%;
-
-}
-
-
-
-/*运费和商品总额*/
-.freight-accounts{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-}
-.freight{
+.btnList{
   width: 70%;
-  margin-left: 15%;
-  height: auto;
+  height: 100rpx;
   display: flex;
   flex-direction: row;
-  color: red;
-  font-size: 30rpx;
-  justify-content: space-between;
+  align-items: center;
 }
-
-
-
-
-/*底部的内容*/
-.bottom_line {
-  width: 100%;
-  height: 2rpx;
-  background: lightgray;
-}
-.bottom_total {
-  position: fixed;
+.textAccount{
+  width: 20%;
   display: flex;
-  flex-direction: column;
-  bottom: 0;
-  width: 100%;
-  height: 120rpx;
-  line-height: 120rpx;
-  background: white;
+  color: #333333;
+  margin-left: 3%;
+
 }
-.button-red {
-  background-color: #f44336; /* 红色 */
+.textPrice{
+  width: 50%;
+  color: #C89F5F;
+  display: flex;
+
 }
-button {
-  position: fixed;
-  right: 0;
-  color: white;
-  text-align: center;
-  display: inline-block;
-  font-size: 30rpx;
-  border-radius: 0rpx;
+
+.payChat{
   width: 30%;
-  height: 120rpx;
-  line-height: 120rpx;
+  height: 100rpx;
+  display: flex;
+  color: #FFFFFF;
+  background-color: #C89E5E;
+  justify-content: center;
+  align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -59,19 +59,24 @@
     <picker-view-column>
        <view wx:for="{{provinces}}" class="picker-item">
        <!-- <view wx:for="{{provinces}}" class="picker-item">-->
-        {{item.province_name}}</view>
+        {{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
       <view wx:for="{{citys}}" class="picker-item" wx:key="">
-        {{item.city_name}}</view>
+        {{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
       <view wx:for="{{areas}}" class="picker-item" wx:key="">
-        {{item.district_name}}</view>
+        {{item.name}}</view>
     </picker-view-column>
   </picker-view>
 
 </view>
+
+
+
+    
+
         
     </view>
 

@@ -2,11 +2,18 @@ Page({
   data: {
   
   },
-  bindSearch:function(){
-     console.log('beijing')
-     wx.redirectTo({
-       url:'../goodslist/goodslist'
+  bindSearch:function(e){
+     //console.log(e)
+     var search= e.detail.value
+    // wx.setStorageSync('search', search)
+      wx.redirectTo({
+       url:'../goodslist/goodslist?content='+search
      })
+  },
+  cancel:function(){
+  	wx.navigateBack({
+  		url:'pages/index/index'
+  	})
   }
   
 })

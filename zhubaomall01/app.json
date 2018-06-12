@@ -9,23 +9,24 @@
     "pages/goodslist/goodslist",
     "pages/article/article",
     "pages/pendingPaymentOrder/pendingPaymentOrder",
-    "pages/my/my",
     "pages/order/order",
     "pages/orderDetails/orderDetails",
-    "pages/addr/addr",
-    "pages/screen/screen",
+     "pages/my/my",
+     "pages/addr/addr",
     "pages/addrShow/addrShow",
-    "pages/searchList/searchList"
+    "pages/addrUp/addrUp"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#F5F4F5",
     "navigationBarTitleText": "珠宝商城",
     "navigationBarTextStyle":"black"
   },
    "tabBar": {
-    "color":"#FF0000",
-    "selectedColor":"#0000FF",
+    "color":"#999999",
+    "selectedColor":"#C89F5F",
+    "borderStyle":"white",
+    "backgroundColor":"#FFFFFF",
     "list": [
      {
       "pagePath": "pages/index/index",
@@ -34,7 +35,7 @@
       "iconPath":"images/banners/tab_home_def.png"
      }, {
       "pagePath": "pages/information/information",
-      "text": "资讯",
+      "text": "珠宝日记",
        "selectedIconPath":"images/banners/information_s.png",
       "iconPath":"images/banners/information.png"
     },
@@ -44,7 +45,7 @@
        "selectedIconPath":"images/banners/gouwuche_s.png",
       "iconPath":"images/banners/gouwuche.png"
     },
-    {
+   {
       "pagePath": "pages/my/my",
       "text": "我的",
        "selectedIconPath":"images/banners/user_s.png",

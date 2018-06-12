@@ -1,12 +1,30 @@
 Page({
-   //打电话
-   tel:function(){
-   	 wx.makePhoneCall({
-       phoneNumber: '18614079208'
-     })
+  
+   onLoad:function(){
+      var urlDetails="https://zq.muyaonet.com/api/index/getTel"
+      var that =this
+
+     wx.request({
+            url :urlDetails,
+            method : "POST",
+            header: {'content-type': 'application/x-www-form-urlencoded'},
+            success: function(reses){
+            
+                var connect= reses.data.data.niu_index_response
+              
+                that.setData({
+                   connect:connect
+                })
+                 
+                
+            } 
+        });
    },
-   //绑定客服功能
-   customerService:function(){
-       console.log('beijing')
+   //打电话
+   tel:function(e){
+    var tel = e.currentTarget.id
+   	 wx.makePhoneCall({
+       phoneNumber: tel
+     })
    }
 }) 

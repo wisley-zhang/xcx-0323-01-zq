@@ -1,396 +1,352 @@
 <!--搜索框-->
 <view class="page-top">
     <view class="searchs">
-       <navigator url="/pages/search/search" hover-class="navigator-hover">
-             <image src="../../images/index/search.png" class="search"/>
+       <navigator url="/pages/search/search" hover-class="none">
+        <view class="searches">
+            <image src="../../images/banners/search.png" mode="widthFix" class="explores"></image>
+        </view>
        </navigator>
     </view>
-    <!--列表-->
+    <!--一级商品列表-->
     <view class="list-top">
-      <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
-        <text>{{item}}</text>  
+      <view wx:for="{{goodsList}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" data-variable="{{item.category_id}}" wx:key="unique" bindtap="navbarTap">
+        <text>{{item.category_name}}</text>  
       </view>
     </view>
 </view>
 
 <!--精选页面-->
 <view class="containere" hidden="{{currentTab!==0}}">
-
-   <scroll-view scroll-y="true" style="height: 900rpx;" class="scrolls">
+   <scroll-view scroll-y="true" scroll-top="0" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
     <!--滚动图片-->
     <view class="containers">
     	<swiper indicator-dots="{{indicatorDots}}"
-      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{Height}}">
         <block wx:for="{{imgUrls}}">
-          <navigator url="../goodsdetails/goodsdetails" style="display:flex" hover-class="none">
+          <navigator url="/pages/goodsdetails/goodsdetails?id={{item.adv_url}}" style="width:100%; display:flex" hover-class="none">
           <swiper-item>
-            
-            <image src="{{item}}" class="slide-image"/>
+            <image src="https://zq.muyaonet.com/{{item.adv_image}}" bindload="imgHeight" class="slide-image"/>
           </swiper-item>
           </navigator>
         </block>
       </swiper>
     </view>
-
-    <view class="ser-list">
-         <navigator url="/pages/goodslist/goodslist?id=11" hover-class="none">
-           <view class="titles">
-               <view class="big-title">
-                   <text>月度盘点hhhhhh</text>
+ <!--大循环的地方-->
+    <blcok wx:for="{{goodsListess}}" wx:for-index="idx" wx:for-item="itemName">
+        <view class="ser-list">
+               <view class="titles">
+                   <view class="lefts">
+                      <view class="leftLine"></view>
+                      <image src="../../images/index/ju.png"></image>
+                   </view>
+                   <view class="big-title">
+                       <text>{{itemName.category_banner_title}}</text>
+                   </view>
+                   <view class="leftss">
+                      <image src="../../images/index/ju.png"></image>
+                      <view class="leftLines"></view>
+                   </view>
                </view>
-           </view>
-           <view class="img-title">
-                <image src="../../images/list.png" />
-           </view>
-          
-         </navigator>
-          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;margin-top:1%;" >
-           <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-      
-             <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-              
-            <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-
-                <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-               
-          </scroll-view>
-      </view>
-
- <view class="ser-list">
-         <navigator url="/pages/goodslist/goodslist?id=11" hover-class="none">
-           <view class="titles">
-               <view class="big-title">
-                   <text>月度盘点hhhhhh</text>
+               <view class="subtitle">
+                 {{itemName.category_banner_title}}
                </view>
-           </view>
-           <view class="img-title">
-                <image src="../../images/list.png" />
-           </view>
-         </navigator>
-          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;margin-top:1%;" >
-           <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
+                 <image src="https://zq.muyaonet.com/{{itemName.category_banner}}" bindload="imageLoad" data-index="{{index}}" style="width:100%; height:{{imageheight}}rpx;"></image>
+              <view class="ser-lists">  
+       <blcok wx:for="{{itemName.goods_list}}" wx:for-index="idx" wx:for-item="itemNames"> 
+                 <view class="goods">
+                     <navigator url="/pages/goodsdetails/goodsdetails?id={{itemNames.goods_id}}" hover-class="none">
+                     <view class="img">
+                         <image src="https://zq.muyaonet.com/{{itemNames.pic_cover_small}}" mode="widthFix" class="img-one"/>
+                       </view>
+                      <view class="title">
+                         {{itemNames.goods_name}}
+                      </view>
+                      <view class="price">
+                           ¥ {{itemNames.price}}
+                      </view>
+                    </navigator>
                   </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-      
-             <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-              
-            <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-
-                <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-               
-          </scroll-view>
-      </view>
-
-
-
-
-
+          </blcok>
+  </view>
+             
+          </view>
+     </blcok>
 </scroll-view>
-
-
-
 </view>
 
-<!--宝石-->  
-<view hidden="{{currentTab!==1}}" bindtap="gemstone">  
-  <scroll-view scroll-y="true" style="height: 800rpx;">
-       <view class="xilie-title">
-         <block wx:for="{{xilieTitle}}" wx:for-index="indx" wx:for-item="itemName">
-          <navigator url="/pages/searchList/searchList" class="nav" hover-class="none">
-              <view class="art-title">
-                <text>{{itemName['name']}}</text>
-              </view>
-           </navigator>
-          </block>
-       </view>
-   
+<!--设计系列-->  
+<view hidden="{{currentTab!==1}}"> 
+ <!--二级商品列表-->
+  <scroll-view scroll-y="true" style="height:{{clientHeight?clientHeight+'px':'auto'}}">
 
-    <view class="ser-list">
-         <navigator url="/pages/goodslist/goodslist?id=11" hover-class="none">
-           <view class="img-title">
-                <image src="../../images/list.png" />
-           </view>
-           <view class="titles">
-               <view class="big-title">
-                   <text>月度盘点hhhhhh</text>
+    <view class="xilitLists">
+        <view class="xilielists">
+           <blcok wx:for="{{goodsLists}}" wx:for-index="idx" wx:for-item="itemNames">
+            <view class="listimgtext">
+              <navigator url="/pages/goodslist/goodslist?category_id={{itemNames.category_id}}" hover-class="none">
+                <image src="http://zq.muyaonet.com/{{itemNames.category_pic}}" mode="widthFix"></image>
+                <view class="tilexx">
+                  {{itemNames.category_name}}
+                </view>
+              </navigator>
+            </view>
+          </blcok>
+        </view>
+    </view>
+     <!--具体的商品的列表即大循环的地方-->
+    <blcok wx:for="{{goodsListess}}" wx:for-index="idx" wx:for-item="itemName">
+      <!-- <block wx:if="{{itemName.category_banner==true}}"> -->
+        <view class="ser-list">
+             <!-- <navigator url="/pages/goodslist/goodslist?id=11" hover-class="none" class="ngv-list"> -->
+               <view class="titles">
+                   <view class="lefts">
+                      <view class="leftLine"></view>
+                      <image src="../../images/index/ju.png"></image>
+                   </view>
+                   <view class="big-title">
+                       <text>{{itemName.category_banner_title}}</text>
+                   </view>
+                   <view class="leftss">
+                      <image src="../../images/index/ju.png"></image>
+                      <view class="leftLines"></view>
+                   </view>
                </view>
-               <view class="small-title">
-                 买这些产品dddd
+               <view class="subtitle">
+                   {{itemName.category_banner_long_title}}
                </view>
-           </view>
-         </navigator>
-          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
-              
-              <view class="list-goods">
-               <!--  <navigator url="/pages/goodsdetails/goodsdetails?id=11" hover-class="none"> -->
-                  <view class="goods-one">
-                    <image src="../../images/list01.png" class="list-one-img"/>
-                  </view>
-                  <view class="title-prie">
-                    <view class="goods-name">
-                       <text>休闲服装</text>
-                    </view>
-                    <view class="price">
-                        <text>¥1900</text>
-                    </view>
-                  </view>
-               <!--  </navigator> -->
-              </view>
-      
-             <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-              
-            <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
 
-                <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
+              <!--  <view class="img-title"> -->
+                   <!--  <image src="https://zq.muyaonet.com/{{itemName.category_banner}}" mode="widthFix" class="img-title"/> -->
 
-                
-          </scroll-view>
-      </view>
+                    <image src="https://zq.muyaonet.com/{{itemName.category_banner}}" bindload="imageLoad" data-index="{{ index }}" style="width:100%; height:{{imageheight}}rpx;"></image>
+               <!-- </view> -->
+            <!--  </navigator> -->
+              <!-- <scroll-view scroll-x="true" class="scrollsx" >
+                <view class="scrollsxs">
+                    <blcok wx:for="{{itemName.goods_list}}" wx:for-index="idx" wx:for-item="itemNames">
+                       <view class="list-goods">
+                           <navigator url="/pages/goodsdetails/goodsdetails?id={{itemNames.goods_id}}" hover-class="none">
+                                <view class="goods-one">
+                                  <image src="https://zq.muyaonet.com/{{itemNames.pic_cover_small}}" class="list-one-img" mode="widthFix"/>
+                                </view>
+                                <view class="title-prie">
+                                    <view class="goods-name">
+                                       <text>{{itemNames.goods_name}}</text>
+                                    </view>
+                                    <view class="price">
+                                      <text>¥ {{itemNames.price}}</text>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                      </blcok>
+                </view>
+              </scroll-view> -->
+              <view class="ser-lists">  
+       <blcok wx:for="{{itemName.goods_list}}" wx:for-index="idx" wx:for-item="itemNames"> 
+                 <view class="goods">
+                     <navigator url="/pages/goodsdetails/goodsdetails?id={{itemNames.goods_id}}" hover-class="none">
+                     <view class="img">
+                         <image src="https://zq.muyaonet.com/{{itemNames.pic_cover_mid}}" mode="widthFix" class="img-one"/>
+                       </view>
+                      <view class="title">
+                         {{itemNames.goods_name}}
+                      </view>
+                      <view class="price">
+                           ¥ {{itemNames.price}}
+                      </view>
+                    </navigator>
+                  </view>
+          </blcok>
+  </view>
+          </view>
 
-      <view class="ser-list">
-         <navigator url="/pages/goodslist/goodslist?id=11" hover-class="none">
-           <view class="img-title">
-                <image src="../../images/list.png" />
-           </view>
-           <view class="titles">
-               <view class="big-title">
-                   <text>月度盘点hhhhhh</text>
-               </view>
-               <view class="small-title">
-                 买这些产品dddd
-               </view>
-           </view>
-         </navigator>
-          <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
-           <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-      
-             <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-              
-            <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-
-                <view class="list-goods">
-              <view class="goods-one">
-                  <image src="../../images/list01.png" class="list-one-img"/>
-                </view>
-                <view class="title-prie">
-                  <view class="goods-name">
-                     <text>休闲服装</text>
-                  </view>
-                    <view class="price">
-                      <text>¥1900</text>
-                    </view>
-                    </view>
-                </view>
-                
-          </scroll-view>
-      </view>
-
+    <!-- </block> -->
+     </blcok>
 </scroll-view>
-
-
-
 
 </view>  
 
-<!--钻石-->  
+<!--奢华珠宝-->  
 <view hidden="{{currentTab!==2}}">  
-    <view class="xilie-title">
-     <block wx:for="{{xilieTitle}}" wx:for-index="indx" wx:for-item="itemName">
-      <navigator url="/pages/searchList/searchList" class="nav" hover-class="none">
-          <view class="art-title">
-            <text>{{itemName['name']}}</text>
+     <!--列表-->
+  <scroll-view scroll-y="true" style="height:{{clientHeight?clientHeight+'px':'auto'}}">
+    
+    <view class="xilitLists">
+        <view class="xilielists">
+            <blcok wx:for="{{goodsLists}}" wx:for-index="idx" wx:for-item="itemNames">
+            <view class="listimgtext">
+              <navigator url="/pages/goodslist/goodslist?category_id={{itemNames.category_id}}" hover-class="none">
+                <image src="http://zq.muyaonet.com/{{itemNames.category_pic}}" mode="widthFix"></image>
+                <view class="tilexx">
+                  {{itemNames.category_name}}
+                </view>
+              </navigator>
+            </view>
+          </blcok>
+        </view>
+    </view>
+
+     <blcok wx:for="{{goodsListess}}" wx:for-index="idx" wx:for-item="itemName">
+        <view class="ser-list">
+             <!-- <navigator url="/pages/goodslist/goodslist?id=11" hover-class="none" class="ngv-list"> -->
+
+               <view class="titles">
+                   <view class="lefts">
+                      <view class="leftLine"></view>
+                      <image src="../../images/index/ju.png"></image>
+                   </view>
+                   <view class="big-title">
+                       <text>{{itemName.category_banner_title}}</text>
+                   </view>
+                   <view class="leftss">
+                      <image src="../../images/index/ju.png"></image>
+                      <view class="leftLines"></view>
+                   </view>
+               </view>
+               <view class="subtitle">
+                   {{itemName.category_banner_long_title}}
+               </view>
+
+              <!--  <view class="img-title"> -->
+                    <!-- <image src="https://zq.muyaonet.com/{{itemName.category_banner}}" mode="widthFix" class="img-title" /> -->
+
+                    <image src="https://zq.muyaonet.com/{{itemName.category_banner}}" bindload="imageLoad" data-index="{{ index }}" style="width:100%; height:{{imageheight}}rpx;"></image>
+              <!--  </view> -->
+            <!--  </navigator> -->
+              <!-- <scroll-view scroll-x="true" class="scrollsx" >
+                <view class="scrollsxs">
+                    <blcok wx:for="{{itemName.goods_list}}" wx:for-index="idx" wx:for-item="itemNames">
+                       <view class="list-goods">
+                           <navigator url="/pages/goodsdetails/goodsdetails?id={{itemNames.goods_id}}" hover-class="none">
+                                <view class="goods-one">
+                                  <image src="https://zq.muyaonet.com/{{itemNames.pic_cover_small}}" class="list-one-img" mode="widthFix"/>
+                                </view>
+                                <view class="title-prie">
+                                    <view class="goods-name">
+                                       <text>{{itemNames.goods_name}}</text>
+                                    </view>
+                                    <view class="price">
+                                      <text>¥ {{itemNames.price}}</text>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                      </blcok>
+                </view>
+              </scroll-view> -->
+              <view class="ser-lists">  
+       <blcok wx:for="{{itemName.goods_list}}" wx:for-index="idx" wx:for-item="itemNames"> 
+                 <view class="goods">
+                     <navigator url="/pages/goodsdetails/goodsdetails?id={{itemNames.goods_id}}" hover-class="none">
+                     <view class="img">
+                         <image src="https://zq.muyaonet.com/{{itemNames.pic_cover_mid}}" mode="widthFix" class="img-one"/>
+                       </view>
+                      <view class="title">
+                         {{itemNames.goods_name}}
+                      </view>
+                      <view class="price">
+                           ¥ {{itemNames.price}}
+                      </view>
+                    </navigator>
+                  </view>
+          </blcok>
+  </view>
           </view>
-       </navigator>
-      </block>
-   </view>
+     </blcok>
+
+
+
+</scroll-view>
+
 </view> 
-<!--翡翠-->  
+<!--私人定制-->  
 <view hidden="{{currentTab!==3}}">  
-    <view class="xilie-title">
-       <block wx:for="{{xilieTitle}}" wx:for-index="indx" wx:for-item="itemName">
-        <navigator url="/pages/goodsdetails/goodsdetails" class="nav" hover-class="none">
-            <view class="art-title">
-              <text>{{itemName['name']}}</text>
+      <!--列表-->
+  <scroll-view scroll-y="true" style="height:{{clientHeight?clientHeight+'px':'auto'}}">
+    
+    <view class="xilitLists">
+        <view class="xilielists">           
+          <blcok wx:for="{{goodsLists}}" wx:for-index="idx" wx:for-item="itemNames">
+            <view class="listimgtext">
+             <navigator url="/pages/goodslist/goodslist?category_id={{itemNames.category_id}}" hover-class="none">
+                <image src="http://zq.muyaonet.com/{{itemNames.category_pic}}" mode="widthFix"></image>
+                <view class="tilexx">
+                  {{itemNames.category_name}}
+                </view>
+              </navigator>
             </view>
-         </navigator>
-        </block>
-   </view>
-</view> 
-<!--desgin-->  
-<view hidden="{{currentTab!==4}}">  
-     <view class="xilie-title">
-       <block wx:for="{{xilieTitle}}" wx:for-index="indx" wx:for-item="itemName">
-        <navigator url="/pages/goodsdetails/goodsdetails" class="nav" hover-class="none">
-            <view class="art-title">
-              <text>{{itemName['name']}}</text>
-            </view>
-         </navigator>
-        </block>
-   </view>
+          </blcok>
+            
+        </view>
+    </view>
+
+     <blcok wx:for="{{goodsListess}}" wx:for-index="idx" wx:for-item="itemName">
+        <view class="ser-list">
+             <view class="titles">
+                 <view class="lefts">
+                    <view class="leftLine"></view>
+                    <image src="../../images/index/ju.png"></image>
+                 </view>
+                 <view class="big-title">
+                     <text>{{itemName.category_banner_title}}</text>
+                 </view>
+                 <view class="leftss">
+                    <image src="../../images/index/ju.png"></image>
+                    <view class="leftLines"></view>
+                 </view>
+             </view>
+             <view class="subtitle">
+                 {{itemName.category_banner_long_title}}
+             </view>
+             
+            <!--  <view class="img-title"> -->
+                 <!--  <image src="https://zq.muyaonet.com/{{itemName.category_banner}}" mode="widthFix" class="img-title" />
+ -->
+                  <image src="https://zq.muyaonet.com/{{itemName.category_banner}}" bindload="imageLoad" data-index="{{ index }}" style="width:100%; height:{{imageheight}}rpx;"></image>
+            <!--  </view> -->
+
+              <!-- <scroll-view scroll-x="true" class="scrollsx" >
+                <view class="scrollsxss">
+                    <blcok wx:for="{{itemName.goods_list}}" wx:for-index="idx" wx:for-item="itemNames">
+                       <view class="list-goods">
+                           <navigator url="/pages/goodsdetails/goodsdetails?id={{itemNames.goods_id}}" hover-class="none">
+                                <view class="goods-one">
+                                  <image src="https://zq.muyaonet.com/{{itemNames.pic_cover_small}}" class="list-one-img" mode="widthFix"/>
+                                </view>
+                                <view class="title-prie">
+                                    <view class="goods-name">
+                                       <text>{{itemNames.goods_name}}</text>
+                                    </view>
+                                    <view class="price">
+                                      <text>¥ {{itemNames.price}}</text>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                      </blcok>
+                </view>
+              </scroll-view> -->
+
+              <view class="ser-lists">  
+       <blcok wx:for="{{itemName.goods_list}}" wx:for-index="idx" wx:for-item="itemNames"> 
+                 <view class="goods">
+                     <navigator url="/pages/goodsdetails/goodsdetails?id={{itemNames.goods_id}}" hover-class="none">
+                     <view class="img">
+                         <image src="https://zq.muyaonet.com/{{itemNames.pic_cover_mid}}" mode="widthFix" class="img-one"/>
+                       </view>
+                      <view class="title">
+                         {{itemNames.goods_name}}
+                      </view>
+                      <view class="price">
+                           ¥ {{itemNames.price}}
+                      </view>
+                    </navigator>
+                  </view>
+          </blcok>
+  </view>
+          </view>
+     </blcok>
+</scroll-view>
+
 </view> 

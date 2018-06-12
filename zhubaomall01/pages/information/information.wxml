@@ -1,17 +1,25 @@
 <view class="arctic">
-	<navigator url= "/pages/article/article" class="navigator01">
-		<image src="../../images/goods/info.png" class="img-artic"/>
-		<view class="time-author">
-			<view class="times">
-				<text>2018-04-07</text>
-			</view>
-			<view class="author">
-				<text>作者名字</text>
-			</view>
-			
-		</view>
-		<view class="title">
-			<text>文章的标题</text>
-		</view>
-    </navigator>
+	<block  wx:for="{{articleTitle}}" wx:for-index="idx" wx:for-item="itemName">
+		<navigator url= "/pages/article/article?id={{itemName.id}}" class="navigator01" hover-class="none">
+			<image src="https://zq.muyaonet.com/{{itemName.image}}" style="height:{{Height}}"  bindload="imgHeight" class="img-artic"/>
+            
+            <view class="contents">
+				<view class="authorTimes">
+					<view class="title">
+						<text>{{itemName.title}}</text>
+					</view>
+					<view class="time-author">
+						<view class="times">
+							<text>{{itemName.timess}}</text>
+						</view>
+						<view class="author">
+							<text>{{itemName.author}}</text>
+						</view>
+					</view>
+				</view>
+				<image src="../../images/icon/arrow.png"></image>
+            </view>
+	    </navigator>
+    </block>
+    
 </view>
