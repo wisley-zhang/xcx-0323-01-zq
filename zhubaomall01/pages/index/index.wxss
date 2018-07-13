@@ -100,7 +100,7 @@ block swiper-item {
 }
 .titles{
 	width: 100%;
-	height: 60rpx;
+	height: auto;
 	padding-top: 3%;
 	margin-top: 3%;
 	display: flex;
@@ -229,8 +229,6 @@ block swiper-item {
 	width: 100%;
 	height: auto;
 }
-
-
 .img{
 	width: 100%;
 	height: auto;

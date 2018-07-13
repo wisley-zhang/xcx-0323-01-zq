@@ -38,7 +38,9 @@ imgHeight:function(e){
         //获取屏幕宽高  
         wx.getSystemInfo({  
           success: function (res) {  
-            var windowWidth = res.windowWidth;  
+            var windowWidth = res.windowWidth;
+            console.log(windowWidth)
+            console.log('屏幕宽度')  
             var windowHeight = res.windowHeight;  
             var windowscale = windowHeight/windowWidth;//屏幕高宽比  
             //console.log('windowWidth: ' + windowWidth)  
@@ -57,7 +59,8 @@ imgHeight:function(e){
             //console.log('缩放后的高: ' + imageSize.imageHeight)
             that.setData({
               imagewidth: imageSize.imageWidth, 
-              imageheight: imageSize.imageHeight  
+              imageheight: imageSize.imageHeight
+              //imageheight: originalHeight
             })
 
           }  
@@ -76,6 +79,7 @@ imgHeight:function(e){
           header: {'content-type': 'application/x-www-form-urlencoded'},
           success: function(reses){
             var adv_list = reses.data.data.niu_index_response.adv_list
+            //console.log('测试滚动图')
             //console.log(adv_list)
             //console.log(adv_list[0].adv_title)
             if (adv_list[0].adv_url=='#') {
@@ -122,7 +126,7 @@ imgHeight:function(e){
                   success: function(reses){
                       //console.log(reses)
                       var goodsListess = reses.data.data.niu_index_response
-                      //console.log(goodsListess)
+                      console.log(goodsListess)
                       var arr =new Array()
                       for(var i=0;i<goodsListess.length;i++){
                            if(goodsListess[i].category_banner_id !==''){
@@ -195,6 +199,7 @@ imgHeight:function(e){
           url : urls,
           success: function(reses){  
              var goodsList= reses.data.data.niu_index_response
+
              that.setData({
                  goodsLists:goodsList
              })    
@@ -203,6 +208,8 @@ imgHeight:function(e){
 
       var urlss="https://zq.muyaonet.com/api/goods/goodsHomeList"
          var id =e.currentTarget.dataset.variable 
+         console.log('查看id是多少')
+         console.log(id)
         wx.request({ 
               url : urlss,
               method : "POST",
@@ -218,11 +225,11 @@ imgHeight:function(e){
                             arr[i] = goodsList[i]
                       }
                }
-
               
                if (arr.category_banner_title==undefined) {
-                console.log('这是空值')
+                //console.log('这是空值')
                }
+               //console.log(arr)
                 that.setData({
                      goodsListess:arr
                  })    

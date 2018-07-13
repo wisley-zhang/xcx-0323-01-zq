@@ -11,8 +11,8 @@
     "pages/pendingPaymentOrder/pendingPaymentOrder",
     "pages/order/order",
     "pages/orderDetails/orderDetails",
-     "pages/my/my",
-     "pages/addr/addr",
+    "pages/my/my",
+    "pages/addr/addr",
     "pages/addrShow/addrShow",
     "pages/addrUp/addrUp"
   ],

@@ -17,6 +17,7 @@ Page({
       //适配高度
     wx.getSystemInfo({
       success: function (res) {
+        //console.log('客户端高度')
         //console.log(res.windowHeight)
         that.setData({
           clientHeight: res.windowHeight
@@ -27,6 +28,8 @@ Page({
       //商品的参数（id）
       //console.log(option)
       var id = option.id
+      //console.log(id)
+      //console.log('商品的id')
       var urls="https://zq.muyaonet.com/api/index/getgoodsinfo" //商品详情
       wx.request({
           url :urls,
@@ -37,12 +40,21 @@ Page({
           },
           success: function(reses){
               //console.log(reses)
-             console.log('北京商品详情')
+             //console.log('北京商品详情')
               console.log(reses.data.data.niu_index_response.goods_detail)
-              var goodsDetail = reses.data.data.niu_index_response.goods_detail    
+              var goodsDetail = reses.data.data.niu_index_response.goods_detail
+
+             // var contents=  contnet.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
+              
+              console.log('商品详情数据')
+             // console.log(goodsDetail)    
+              console.log(goodsDetail.description)
+              var desc =  goodsDetail.description.replace(/\<img/gi, '<image style="max-width:100%;height:auto" ')
+              console.log(desc)
               wx.setStorageSync('goodsDetail', goodsDetail)
               that.setData({
-                goodsDetail:goodsDetail
+                goodsDetail:goodsDetail,
+                desc:desc
               })
                
                
@@ -76,8 +88,6 @@ Page({
                imageSize.imageWidth = (windowHeight * originalWidth) / originalHeight;  
             } 
             
-            //console.log('缩放后的宽: ' + imageSize.imageWidth)  
-            //console.log('缩放后的高: ' + imageSize.imageHeight)
             that.setData({
               imagewidth: imageSize.imageWidth, 
               imageheight: imageSize.imageHeight  
@@ -96,7 +106,6 @@ imgHeight:function(e){
     Height:swiperH//设置高度
   })
 },
-
 
 
   //页面转发
