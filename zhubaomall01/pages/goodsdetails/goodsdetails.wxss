@@ -40,7 +40,7 @@ block swiper-item {
 .pricesess {
   width: 80%;
   color: #C89F5F;
-  font-size: 60rpx;
+  font-size: 40rpx;
   margin: 10rpx;
 }
 

@@ -49,7 +49,7 @@ Page({
               console.log('商品详情数据')
              // console.log(goodsDetail)    
               console.log(goodsDetail.description)
-              var desc =  goodsDetail.description.replace(/\<img/gi, '<image style="max-width:100%;height:auto" ')
+              var desc =  goodsDetail.description.replace(/\<img/gi, "<image style='max-width:100%;' ")
               console.log(desc)
               wx.setStorageSync('goodsDetail', goodsDetail)
               that.setData({
