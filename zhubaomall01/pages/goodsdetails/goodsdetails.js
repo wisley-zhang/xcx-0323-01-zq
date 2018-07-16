@@ -6,7 +6,16 @@ Page({
     autoplay:true,
     interval:4000,
     duration:500,
-  },
+    infos:[
+      {'id':1,
+        'infonames':'商品介绍'
+      },{'id':2,
+        'infonames':'正品保障'
+      },{'id':3,
+        'infonames':'购买须知'
+      }
+  ],
+},
 
   onLoad:function(option){
     //页面加载的时候，默认商品选择的数量是:1
@@ -24,7 +33,11 @@ Page({
         });
       }
     });
-
+    //console.log('infos详情')
+    //console.log(that.data.infos)
+    that.setData({
+                 infos:that.data.infos
+             });
       //商品的参数（id）
       //console.log(option)
       var id = option.id
@@ -49,19 +62,39 @@ Page({
               console.log('商品详情数据')
              // console.log(goodsDetail)    
               console.log(goodsDetail.description)
-              var desc =  goodsDetail.description.replace(/\<img/gi, "<image style='max-width:100%;' ")
+              var desc =  goodsDetail.description.replace(/\<img/gi, "<image style='max-width:100%;height:auto' ")
               console.log(desc)
+             // var contents=  desc.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
+       
+              var contentss =desc.replace(/\<span style='/gi, "<span style='line-height:40px; ")
+             console.log('最终的=商品详情')
+             console.log(contentss)
               wx.setStorageSync('goodsDetail', goodsDetail)
               that.setData({
                 goodsDetail:goodsDetail,
-                desc:desc
+                desc:contentss
               })
                
                
           } 
       })
-
   },
+
+   /*列表的几个点击事件*/
+   navbarTap: function(e){ 
+      if (e.currentTarget.dataset.idx==0) {
+           console.log('商品详情的信息')
+      }else if (e.currentTarget.dataset.idx==1) {
+        console.log('北京吧诶净比诶净')
+      }else if(e.currentTarget.dataset.idx==2){
+          console.log('沙发范德萨范德萨')
+      }
+   },
+  
+
+
+
+
   
   //图片大小的设置
   imageLoad: function(e) {

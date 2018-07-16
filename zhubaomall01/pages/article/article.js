@@ -71,7 +71,8 @@ imageLoad: function(e) {
 	    })
         wx.setStorageSync('id',res.data.data.article_content.article_id)
         wx.setStorageSync('title',res.data.data.article_content.title)
-       // console.log(contentss)
+        console.log('文章的详情')
+        console.log(contentss)
         that.setData({
           contents:contentss,
           articleContent:res.data.data.article_content,
