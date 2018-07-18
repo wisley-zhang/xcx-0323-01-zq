@@ -56,44 +56,16 @@ Page({
              //console.log('北京商品详情')
               console.log(reses.data.data.niu_index_response.goods_detail)
               var goodsDetail = reses.data.data.niu_index_response.goods_detail
-
-             // var contents=  contnet.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
-              
-              console.log('商品详情数据')
-             // console.log(goodsDetail)    
-              console.log(goodsDetail.description)
-              var desc =  goodsDetail.description.replace(/\<img/gi, "<image style='max-width:100%;height:auto' ")
-              console.log(desc)
-             // var contents=  desc.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
-       
-              var contentss =desc.replace(/\<span style='/gi, "<span style='line-height:40px; ")
-             console.log('最终的=商品详情')
-             console.log(contentss)
               wx.setStorageSync('goodsDetail', goodsDetail)
               that.setData({
                 goodsDetail:goodsDetail,
-                desc:contentss
+               // desc:contentss
               })
                
                
           } 
       })
   },
-
-   /*列表的几个点击事件*/
-   navbarTap: function(e){ 
-      if (e.currentTarget.dataset.idx==0) {
-           console.log('商品详情的信息')
-      }else if (e.currentTarget.dataset.idx==1) {
-        console.log('北京吧诶净比诶净')
-      }else if(e.currentTarget.dataset.idx==2){
-          console.log('沙发范德萨范德萨')
-      }
-   },
-  
-
-
-
 
   
   //图片大小的设置

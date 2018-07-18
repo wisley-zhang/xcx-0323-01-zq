@@ -1,7 +1,7 @@
 <view class="arctic">
 	<block  wx:for="{{articleTitle}}" wx:for-index="idx" wx:for-item="itemName">
 		<navigator url= "/pages/article/article?id={{itemName.id}}" class="navigator01" hover-class="none">
-			<image src="https://zq.muyaonet.com/{{itemName.image}}" style="height:{{Height}}"  bindload="imgHeight" class="img-artic"/>
+			<image src="https://zq.muyaonet.com/{{itemName.image}}" style="height:{{Height}}" mode="widthFix"  bindload="imgHeight" class="img-artic"/>
             
             <view class="contents">
 				<view class="authorTimes">

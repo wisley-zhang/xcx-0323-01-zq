@@ -193,13 +193,14 @@ imgHeight:function(e){
       var id =e.currentTarget.dataset.variable /*列表的id值*/
     //console.log(id)
     //获取二级列表的名字和id
-   var urls="https://zq.muyaonet.com/api/goods/goodsCategorySecondList?category_id="+id
+    var urls="https://zq.muyaonet.com/api/goods/goodsCategorySecondList?category_id="+id
     var that =this
     wx.request({ 
           url : urls,
           success: function(reses){  
              var goodsList= reses.data.data.niu_index_response
-
+             console.log('二级商品')
+             console.log(goodsList)
              that.setData({
                  goodsLists:goodsList
              })    
@@ -229,7 +230,7 @@ imgHeight:function(e){
                if (arr.category_banner_title==undefined) {
                 //console.log('这是空值')
                }
-               //console.log(arr)
+               console.log(arr)
                 that.setData({
                      goodsListess:arr
                  })    

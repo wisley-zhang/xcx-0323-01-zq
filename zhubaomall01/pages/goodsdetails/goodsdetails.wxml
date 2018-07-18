@@ -18,55 +18,44 @@
   </view>
 </scroll-view>
   <view class="separate"></view>
-  <!--选项卡-->
-  <view class="list-top">
-      <view wx:for="{{infos}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" data-variable="{{item.id}}" wx:key="unique" bindtap="navbarTap">
-        <text>{{item.infonames}}</text>  
-      </view>
-    </view>
-  <!--精选页面-->
-<view class="containere" hidden="{{currentTab!==0}}">
-   <scroll-view scroll-y="true" scroll-top="0" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
-  
-     <rich-text nodes="{{desc}}"></rich-text>
-   </scroll-view>
- </view>
+ 
 
   
-  <!-- <view class="tabs"> -->
-     <!-- <view class="swiper-tab">
+ <view class="tabs"> 
+     <view class="swiper-tab">
         <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">商品介绍</view>
         <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">正品保障</view>
         <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">购买须知</view>
-    </view> -->
-    <!--  <scroll-view scroll-y="true" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
-          <view class="contentss">
-           <rich-text nodes="{{desc}}"></rich-text>
-          </view>
-     </scroll-view>
- -->
+    </view>
+   
 
-   <!-- <swiper current="{{currentTab}}" duration="300"  style="height: {{clientHeight?clientHeight+'px':'auto'}}"  bindchange="swiperTab">
+   <swiper current="{{currentTab}}" duration="300"  style="height: {{clientHeight?clientHeight+'px':'auto'}}"  bindchange="swiperTab">
         <swiper-item >
-           <rich-text nodes="{{desc}}"></rich-text>
+          <scroll-view scroll-y="true" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+            <view class="contentdes">
+           <rich-text nodes="{{goodsDetail.description}}"></rich-text>
+           </view>
+         </scroll-view>
          </swiper-item>  
         <swiper-item>
+           <scroll-view scroll-y="true" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+             <view class="contentdes">
           <rich-text nodes="{{goodsDetail.productguarantee}}"></rich-text>
+        </view>
+        </scroll-view>
         </swiper-item>
         <swiper-item>
+           <scroll-view scroll-y="true" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+             <view class="contentdes">
              <rich-text nodes="{{goodsDetail.purchasenotice}}"></rich-text>
+           </view>
+           </scroll-view>
         </swiper-item>
-    </swiper>-->
-  <!-- </view> -->
-
-  <!--选项卡制作-->
-
-
-
-
+    </swiper>
+ </view> 
 
   <view class="temp"></view>
-<!-- </scroll-view> -->
+
 
 </scroll-view>
 

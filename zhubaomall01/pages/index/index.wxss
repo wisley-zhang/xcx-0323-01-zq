@@ -307,6 +307,14 @@ block swiper-item {
     font-size: 30rpx;
 }
 
+
+/*图片*/
+.imgess{
+   width: 100%;
+   height: auto;
+   margin-bottom: 2%;
+   margin-top: 2%;
+}
 /*.scrollsxs{
 	width: 100%;
 	width: 100%;
